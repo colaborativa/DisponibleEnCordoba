@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>#DisponibleEnCordoba · Edificios públicos sin uso en Córdoba, España</title>
+    <link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/mapbox.share.css" type="text/css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.uncompressed.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="ext/jquery.min.js"></script>
+    <script src="ext/mapbox.jquery.js"></script>
+    <script src="ext/mapbox.jquery.geocoder.js"></script>
+    <script src="ext/mapbox.share.js"></script>
+  </head>
+  <body class="left">
+    <div id="branding"></div>
+    <div id="content">
+      <div class="limiter">
+        <div id="about">
+          <h1 class='map-title'>#DisponibleEnCordoba</h1>
+          <h2>Edificios públicos sin uso en Córdoba, España</h2>
+          <p class='description'>Esta lista se inició por el colectivo dosymedio en 2009 con el título <em>"A la búsqueda de los espacios de creacción"</em>. Posteriormente desde <a href="http://colaborativa.eu">Colaborativa.eu</a> hemos ampliado este trabajo para el proyecto <a href="http://colaborativa.eu/proyectos/espacio-creativo">Espacio Creativo Independiente en Córdoba</a>.</p>
+          <p>Nuestra intención es hacer accesible esta información a cualquiera que lo desee. Si quieres ayudarnos a mantener la lista actualizada puedes enviarnos un tweet con la localización del edificio, el estado actual y links a prensa o información oficial a <a href="http://twitter.com/colaborativaeu"> @colaborativaeu</a> usando el hashtag <a href="https://twitter.com/search/realtime?q=%23disponibleEnCordoba&src=typd">#DisponibleEnCordoba</a></p>
+          <!-- <div id="markerfilters" class="clearfix section">
+            <a class="markerfilter selected" href="#all">All</a>
+          </div> -->
+        </div>
+        <!-- geocoder -->
+        <div data-control='geocode' data-map="map" class="clearfix section" id="search">
+          <form class="geocode">
+            <input placeholder='Busca una dirección' type="text">
+            <input type='submit' />
+            <div id='geocode-error'></div>
+          </form>
+        </div>
+        <p class="footer">Liberada con licencia Creative Commons, CC-BY-SA 3.0. OpenData: Puedes acceder a la versión JSON de esta lista aquí.</p>
+      </div>
+    </div>
+    <div id="map" class="map"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
