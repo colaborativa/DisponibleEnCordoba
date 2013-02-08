@@ -10,7 +10,7 @@ $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
     map = mapTemp;
     map.setZoomRange(14, 16);
     map.centerzoom({ lat: 37.885, lon: -4.79 }, 14);
-    map.setPanLimits([{ lat: 37.9189, lon: -4.8339 }, { lat: 37.8455, lon: -4.7062 }]);
+    map.setPanLimits([{ lat: 37.9452, lon: -4.8641 }, { lat: 37.8133, lon: -4.6835 }]);
     map.zoom(14, true);
 });
 // Load points
@@ -24,8 +24,10 @@ function mapData(f) {
     // Defining interactive layer
     interaction.formatter(function (feature) {
         var o = '<h3>' + feature.properties.titulo + '</h3>' +
-            '<img src="' + feature.properties.enlace + '" alt="' + feature.properties.titulo + '">' +
-            '<p>' + feature.properties.descripcion + '</p>';
+            '<h2>' + feature.properties.direccion + '</h2>' +
+            '<div class="imagen"><img src="' + feature.properties.enlace + '" alt="' + feature.properties.titulo + '"></div>' +
+            '<p>' + feature.properties.descripcion + '</p>' +
+            '<a href="' + feature.properties.masinfo + '">Más info</a>';
         return o;
     });
     download_data();
