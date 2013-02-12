@@ -20,9 +20,10 @@ $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
 function mapData(f) {
     features = f;
     // Adding points to map
-    markerLayer = mapbox.markers.layer().features(features).factory(function(f) {
-        var elem = mapbox.markers.simplestyle_factory(f);
-        MM.addEvent(elem, 'click', function(e) {
+    markerLayer = mapbox.markers.layer().features(features);
+    /*.factory(function(f) {
+      var elem = mapbox.markers.simplestyle_factory(f);
+    MM.addEvent(elem, 'click', function(e) {
            var latitude = f.geometry.coordinates[1] + 0.001;
            var longitude = f.geometry.coordinates[0];
            map.ease.location({
@@ -30,7 +31,7 @@ function mapData(f) {
            lon: longitude}).zoom(map.zoom()).optimal();
           });
         return elem;
-    });
+    });*/
     
     // Adding interaction layer
     interaction = mapbox.markers.interaction(markerLayer);
