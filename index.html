@@ -16,6 +16,12 @@
     <script src="ext/mapbox.jquery.js"></script>
     <script src="ext/mapbox.jquery.geocoder.js"></script>
     <script src="ext/mapbox.share.js"></script>
+    <script src='ext/jquery.emailSpamProtection.js' type='text/javascript'></script>
+    <script>
+      $(function() {
+          $("#about").emailSpamProtection("email"); 
+       });
+    </script>
   </head>
   <body class="left">
     <div id="branding"></div>
@@ -23,9 +29,10 @@
       <div class="limiter">
         <div id="about">
           <h1 class='map-title'>#DisponibleEnCordoba</h1>
-          <h2>Edificios públicos sin uso en Córdoba, España</h2>
+          <h2>Edificios públicos abandonados en Córdoba, España</h2>
           <p class='description'>Esta lista se inició por el colectivo dosymedio en 2009 con el título <em>"A la búsqueda de los espacios de creacción"</em>. Posteriormente desde <a href="http://colaborativa.eu">Colaborativa.eu</a> hemos ampliado este trabajo para el proyecto <a href="http://colaborativa.eu/proyectos/espacio-creativo">Espacio Creativo Independiente en Córdoba</a>.</p>
-          <p>Nuestra intención es hacer accesible esta información a cualquiera que lo desee. Si quieres ayudarnos a mantener la lista actualizada puedes enviarnos un tweet con la localización del edificio, el estado actual y links a prensa o información oficial a <a href="http://twitter.com/colaborativaeu"> @colaborativaeu</a> usando el hashtag <a href="https://twitter.com/search/realtime?q=%23disponibleEnCordoba&src=typd">#DisponibleEnCordoba</a></p>
+          <p>Queremos hacer accesible esta información a cualquiera que lo desee. Puedes bajarte el lista de datos abiertos en formato <a id="download_json" href=''>JSON </a> o <a id="download_csv" href=''> CSV</a>. </p>
+          <p>Si quieres ayudarnos a mantener la lista actualizada puedes enviarnos un tweet a <a href="http://twitter.com/colaborativaeu"> @colaborativaeu </a> usando el hashtag <a href="https://twitter.com/search/realtime?q=%23disponibleEnCordoba&src=typd">#DisponibleEnCordoba</a> o un email a <span class="email">info [at] colaborativa.eu</span> incluyendo:<em> localización del edificio abandonado, estado actual y links a prensa o información oficial </em>, y los añadiremos al mapa. </p>
           <!-- <div id="markerfilters" class="clearfix section">
             <a class="markerfilter selected" href="#all">All</a>
           </div> -->
@@ -38,7 +45,7 @@
             <div id='geocode-error'></div>
           </form>
         </div>
-        <p class="footer">Liberada con licencia Creative Commons, CC-BY-SA 3.0. OpenData: Puedes acceder a la versión JSON de esta lista aquí.</p>
+        <p class="footer">Liberada con licencia Creative Commons, CC-BY-SA 3.0. </p>
       </div>
     </div>
     <div id="map" class="map"></div>
@@ -47,5 +54,6 @@
     <script src='ext/underscore.min.js'></script>
     <script src='ext/google_docs-disponibleencordoba.js'></script>
     <script src="script.js"></script>
+
   </body>
 </html>

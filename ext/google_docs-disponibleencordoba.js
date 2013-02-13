@@ -46,7 +46,6 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                     'masinfo': entry['gsx$masinfo'].$t, 
                 }
             };
-
             for (var y in entry) {
                 if (y === latfield){
                     feature.geometry.coordinates[1] = parseFloat(entry[y].$t);
