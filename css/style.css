@@ -132,7 +132,7 @@ body > div {
   /*background:url(../img/background.png) repeat;*/
 }
 
-#content {
+#content, #contentDetail {
   position:absolute;
   top:0px;
   right:0;
@@ -291,7 +291,7 @@ a.zoomer {
 .left #header .limiter {
   width:480px;
 }
-.left #content {
+.left #content,  .left #contentDetail{
   left:0;
   right:auto;
   border-left:none;
