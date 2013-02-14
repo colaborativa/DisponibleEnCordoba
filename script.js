@@ -1,4 +1,11 @@
-
+//
+//
+// Project: DisponibleEnCordoba
+// Author: Magda Sanchez from Colaborativa.eu
+// Last Updated:
+//      14-02-2012: Adding on click show marker info on left window with id contentDetail. 
+//
+//
 // Datos y Mapa IDs
 var map;
 var data_id = '0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc';
@@ -17,21 +24,55 @@ $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
     map.zoom(14, true);
 });
 // Load points
+/*
+    <div id="contentDetail">
+    </div>
+    // <div class="limiter">
+        <div id="about">
+          <h1 class='map-title'>
+          </h1>
+          <h2></h2>
+          <p class='description'></p>
+        </div>
+        <p class="footer"></p>
+      </div>
+*/
 function mapData(f) {
     features = f;
     // Adding points to map
-    markerLayer = mapbox.markers.layer().features(features);
-    /*.factory(function(f) {
-      var elem = mapbox.markers.simplestyle_factory(f);
-    MM.addEvent(elem, 'click', function(e) {
-           var latitude = f.geometry.coordinates[1] + 0.001;
-           var longitude = f.geometry.coordinates[0];
-           map.ease.location({
-           lat: latitude,
-           lon: longitude}).zoom(map.zoom()).optimal();
+    markerLayer = mapbox.markers.layer().features(features).factory(function(f) {
+        var elem = mapbox.markers.simplestyle_factory(f);
+        MM.addEvent(elem, 'click', function(e) {
+           // f.properties.titulo f.properties.direccion f.properties.descripcion f.properties.estado 
+           // f.properties.enlace f.properties.categoria f.properties.masinfo 
+            var imagen='';
+            var masinfo='';
+            var descripcion='';
+            var direccion='';       
+            var titulo = '<h1>' + f.properties.titulo + '</h1>'
+            $('#contentDetail').removeClass('inactivo').addClass('activo'); //css('display','block');
+            $('#contentDetail').html(''); // clean current div structure
+            $('#contentDetail').append('<a class="closeWindow" href="#">Cerrar</a><script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'); 
+            $('#contentDetail').append(titulo); // h1 class='map-title'
+            if( f.properties.direccion  != ''){
+                direccion = '<h2>' + f.properties.direccion + '</h2>';
+                $('#contentDetail').append(direccion); // h2 direccion
+            }
+            if( f.properties.enlace != ''){
+                imagen = '<div class="imagen"><img src="' + f.properties.enlace + '" alt="' + f.properties.titulo + '"></div>';
+                $('#contentDetail').append(imagen);
+            }
+            if( f.properties.descripcion != ''){
+                descripcion =  '<p>' + f.properties.descripcion + '</p>';
+                $('#contentDetail').append(descripcion);
+            }
+            if( f.properties.masinfo != ''){
+                masinfo = '<a href="' + f.properties.masinfo + '">Más info</a>';
+                $('#contentDetail').append(masinfo);
+            }
           });
         return elem;
-    });*/
+    });
     
     // Adding interaction layer
     interaction = mapbox.markers.interaction(markerLayer);
@@ -39,25 +80,11 @@ function mapData(f) {
     
     // Defining interactive layer
     interaction.formatter(function (feature) {
-        var imagen='';
-        var masinfo='';
-        var direccion='';
-        var descripcion='';
-        //
-        if( feature.properties.enlace != ''){
-            imagen = '<div class="imagen"><img src="' + feature.properties.enlace + '" alt="' + feature.properties.titulo + '"></div>';
-        }
-        if( feature.properties.masinfo != ''){
-            masinfo = '<a href="' + feature.properties.masinfo + '">Más info</a>';
-        }
-        if( feature.properties.descripcion != ''){
-            descripcion =  '<p>' + feature.properties.descripcion + '</p>';
-        }
+        var direccion='';       
         if( feature.properties.direccion  != ''){
             direccion = '<h2>' + feature.properties.direccion + '</h2>';
         }
-        //
-        var o = '<h3>' + feature.properties.titulo + '</h3>' + direccion +  imagen + descripcion  +  masinfo;
+        var o = '<h3>' + feature.properties.titulo + '</h3>' + direccion;
         return o;
     });
     download_data();
@@ -74,5 +101,3 @@ function download_data() {
     $('#download_csv').attr('href', 'https://docs.google.com/spreadsheet/pub?key=' + data_id + '&output=csv');
     $('#download_json').attr('href', 'https://spreadsheets.google.com/feeds/list/' + data_id + '/od6/public/values?alt=json-in-script');
 }
-
-
