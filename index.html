@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>#DisponibleEnCordoba · Edificios públicos sin uso en Córdoba, España</title>
-    <link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css" type="text/css" />
+
+    <meta name='robots' content='index'/>
+    <meta name="Description" content="#DisponibleEnCordoba es una aplicación web que visualiza los edificios públicos abandonados de Córdoba, España">
+
+    <meta itemprop="name" content="#DisponibleEnCordoba">
+    <meta itemprop="description" content="#DisponibleEnCordoba es una aplicación web que visualiza los edificios públicos abandonados de Córdoba, España">
+    <meta itemprop="author" content="Colaborativa.eu, @colaborativaeu">
+    <meta itemprop="url" content="http://disponibleencordoba.colaborativa.eu" />
+
+    <meta property="og:title" content="#DisponibleEnCordoba" />
+    <meta property="og:description" content="#DisponibleEnCordoba es una aplicación web que visualiza los edificios públicos abandonados de Córdoba, España" />
+    <meta itemprop="og:url" content="http://disponibleencordoba.colaborativa.eu" />
+    <meta property="og:image" content="/img/thumbnail.png" />
+
+    <title>#DisponibleEnCordoba · Edificios públicos abandonados en Córdoba, España</title>
+
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/mapbox.share.css" type="text/css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.uncompressed.js'></script>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <script src="ext/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css" type="text/css" />
+    
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.uncompressed.js'></script>
     <script src="ext/mapbox.jquery.js"></script>
     <script src="ext/mapbox.jquery.geocoder.js"></script>
     <script src="ext/mapbox.share.js"></script>
@@ -28,10 +44,10 @@
     <div id="content">
       <div class="limiter">
         <div id="about">
-          <h1 class='map-title'>#DisponibleEnCordoba</h1>
+          <h1 class='map-title'><span class="element-invisible">#DisponibleEnCordoba</span></h1>
           <h2>Edificios públicos abandonados en Córdoba, España</h2>
-          <p class='description'>Esta lista se inició por el colectivo dosymedio en 2009 con el título <em>"A la búsqueda de los espacios de creacción"</em>. Posteriormente desde <a href="http://colaborativa.eu">Colaborativa.eu</a> hemos ampliado este trabajo para el proyecto <a href="http://colaborativa.eu/proyectos/espacio-creativo">Espacio Creativo Independiente en Córdoba</a>.</p>
-          <p>Queremos hacer accesible esta información a cualquiera que lo desee. Puedes bajarte el lista de datos abiertos en formato <a id="download_json" href=''>JSON </a> o <a id="download_csv" href=''> CSV</a>. </p>
+          <p class='description'>En 2009 el colectivo dosymedio inició una investigación sobre espacios públicos abandonados. Más tarde, desde <a href="http://colaborativa.eu">Colaborativa.eu</a> ampliamos este trabajo para el proyecto del <a href="http://colaborativa.eu/proyectos/espacio-creativo">Espacio Creativo Independiente en Córdoba</a>. Puedes leer más sobre el proyecto en <a href="http://colaborativa.eu/proyectos/disponible-en-cordoba/">nuestra web</a>.</p>
+          <p>Además de esta web, hemos liberado los datos (en formato <a id="download_json" href=''>JSON </a> y <a id="download_csv" href=''> CSV</a>) para que cualquier persona pueda acceder a ellos y generar trabajos derivados <a hre="http://opendatacommons.org/licenses/odbl/">(licencia Open Data ODC-ODbL)</a>.</p>
           <p>Si quieres ayudarnos a mantener la lista actualizada puedes enviarnos un tweet a <a href="http://twitter.com/colaborativaeu"> @colaborativaeu </a> usando el hashtag <a href="https://twitter.com/search/realtime?q=%23disponibleEnCordoba&src=typd">#DisponibleEnCordoba</a> o un email a <span class="email">info [at] colaborativa.eu</span> incluyendo:<em> localización del edificio abandonado, estado actual y links a prensa o información oficial,</em> y los añadiremos al mapa. </p>
           <!-- <div id="markerfilters" class="clearfix section">
             <a class="markerfilter selected" href="#all">All</a>
@@ -45,7 +61,7 @@
             <div id='geocode-error'></div>
           </form>
         </div>
-        <p class="footer">Liberada con licencia Creative Commons, CC-BY-SA 3.0. </p>
+        <p class="footer"><a href="http://colaborativa.eu"> Colaborativa.eu</a> 2013. Datos abiertos con licencia <a href="http://opendatacommons.org/licenses/odbl/">ODC-ODbL</a>. Textos e imágenes de la web con licencia <a href="http://creativecommons.org/licenses/by/2.0/es/">CC-BY-SA 2.0.</a></p>
       </div>
     </div>
     <div id="contentDetail" class="inactivo">
@@ -56,6 +72,17 @@
     <script src='ext/underscore.min.js'></script>
     <script src='ext/google_docs-disponibleencordoba.js'></script>
     <script src="script.js"></script>
-
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20377945-7']);
+      _gaq.push(['_setDomainName', 'colaborativa.eu']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>
