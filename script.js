@@ -67,10 +67,15 @@ function mapData(f) {
                 descripcion =  '<p>' + f.properties.descripcion + '</p>';
                 $('#contentDetail').append(descripcion);
             }
+            if( f.properties.referencia != ''){
+                referencia =  '<p><em>Referencia catastral:</em></br> <a href="https://www1.sedecatastro.gob.es/OVCFrames.aspx?TIPO=consulta">' + f.properties.referencia + '</a></p>';
+                $('#contentDetail').append(referencia);
+            }
             if( f.properties.masinfo != ''){
                 masinfo = '<a href="' + f.properties.masinfo + '">Enlace externo</a>';
                 $('#contentDetail').append(masinfo);
             }
+            $('#contentDetail').append('<p class="footer"><a href="http://colaborativa.eu"> Colaborativa.eu</a> 2013. Datos abiertos con licencia <a href="http://opendatacommons.org/licenses/odbl/">ODC-ODbL</a>. Textos e imágenes de la web con licencia <a href="http://creativecommons.org/licenses/by/2.0/es/">CC-BY-SA 2.0.</a></p>');
           });
         return elem;
     });

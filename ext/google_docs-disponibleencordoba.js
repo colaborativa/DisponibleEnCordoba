@@ -43,7 +43,8 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                     'estado': entry['gsx$estado'].$t,
                     'enlace': entry['gsx$enlace'].$t,  
                     'categoria': entry['gsx$categoria'].$t, 
-                    'masinfo': entry['gsx$masinfo'].$t, 
+                    'masinfo': entry['gsx$masinfo'].$t,
+                    'referencia': entry['gsx$referencia'].$t, 
                 }
             };
             for (var y in entry) {
