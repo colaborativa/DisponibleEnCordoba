@@ -49,13 +49,14 @@ function mapData(f) {
             var masinfo='';
             var descripcion='';
             var direccion='';       
-            var titulo = '<h1>' + f.properties.titulo + '</h1>'
+            var titulo = '<h2>' + f.properties.titulo + '</h2>'
             $('#contentDetail').removeClass('inactivo').addClass('activo'); //css('display','block');
             $('#contentDetail').html(''); // clean current div structure
-            $('#contentDetail').append('<a class="closeWindow" href="#">Cerrar</a><script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'); 
+            $('#contentDetail').append('<a class="closeWindow" href="#">&#10006;</a><script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'); 
+            $('#contentDetail').append('<h1 class="map-title"><span class="element-invisible">#DisponibleEnCordoba</span></h1>');
             $('#contentDetail').append(titulo); // h1 class='map-title'
             if( f.properties.direccion  != ''){
-                direccion = '<h2>' + f.properties.direccion + '</h2>';
+                direccion = '<h3>' + f.properties.direccion + '</h3>';
                 $('#contentDetail').append(direccion); // h2 direccion
             }
             if( f.properties.enlace != ''){
@@ -67,7 +68,7 @@ function mapData(f) {
                 $('#contentDetail').append(descripcion);
             }
             if( f.properties.masinfo != ''){
-                masinfo = '<a href="' + f.properties.masinfo + '">Más info</a>';
+                masinfo = '<a href="' + f.properties.masinfo + '">Enlace externo</a>';
                 $('#contentDetail').append(masinfo);
             }
           });
@@ -82,9 +83,9 @@ function mapData(f) {
     interaction.formatter(function (feature) {
         var direccion='';       
         if( feature.properties.direccion  != ''){
-            direccion = '<h2>' + feature.properties.direccion + '</h2>';
+            direccion = '<h3>' + feature.properties.direccion + '</h3>';
         }
-        var o = '<h3>' + feature.properties.titulo + '</h3>' + direccion;
+        var o = '<h2>' + feature.properties.titulo + '</h2>' + direccion;
         return o;
     });
     download_data();
