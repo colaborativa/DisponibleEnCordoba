@@ -4,14 +4,15 @@
 // https://github.com/ded/reqwest
 // http://mapbox.com/blog/mapbox-fusion-tables-drones/
 //
+var DEBUG_GOOGLE = 0;
 function mmg_google_docs_spreadsheet_1(id, callback) {
-    console.log("function mmg_google_docs_spreadsheet_1");
+    if( DEBUG_GOOGLE) { console.log("function mmg_google_docs_spreadsheet_1");}
     if (typeof reqwest === 'undefined'){
         console.log("CSV: reqwest required for mmg_csv_url");
     }
 
     function response(x) {
-        console.log("function response");
+        if( DEBUG_GOOGLE) { console.log("function response");}
         var features = [],
             latfield = '',
             lonfield = '';
@@ -72,9 +73,9 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
         }
         return callback(features);
     }
-    var url = 'https://spreadsheets.google.com/feeds/list/' +
+    var url = 'http://spreadsheets.google.com/feeds/list/' +
         id + '/od6/public/values?alt=json-in-script&callback=callback';
-    console.log(url);
+    //console.log(url);
     reqwest({
         url: url,
         type: 'jsonp',
