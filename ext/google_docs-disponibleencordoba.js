@@ -1,19 +1,17 @@
+//
+//
+// https://github.com/Rub21/ayacucho/blob/gh-pages/ext/google_docs.js
+// https://github.com/ded/reqwest
+// http://mapbox.com/blog/mapbox-fusion-tables-drones/
+//
 function mmg_google_docs_spreadsheet_1(id, callback) {
+    console.log("function mmg_google_docs_spreadsheet_1");
     if (typeof reqwest === 'undefined'){
-        throw 'CSV: reqwest required for mmg_csv_url';
+        console.log("CSV: reqwest required for mmg_csv_url");
     }
 
-    var url = 'https://spreadsheets.google.com/feeds/list/' +
-        id + '/od6/public/values?alt=json-in-script&callback=callback';
-    reqwest({
-        url: url,
-        type: 'jsonp',
-        jsonpCallback: 'callback',
-        success: response,
-        error: response
-    }); 
-   
     function response(x) {
+        console.log("function response");
         var features = [],
             latfield = '',
             lonfield = '';
@@ -74,5 +72,16 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
         }
         return callback(features);
     }
+    var url = 'https://spreadsheets.google.com/feeds/list/' +
+        id + '/od6/public/values?alt=json-in-script&callback=callback';
+    console.log(url);
+    reqwest({
+        url: url,
+        type: 'jsonp',
+        jsonpCallback: 'callback',
+        success: response,
+        error: response
+    });
+    // problem when browser needs to add security exceptio for this request
 }
 
