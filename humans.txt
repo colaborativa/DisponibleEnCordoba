@@ -17,4 +17,4 @@
     Last update:2013/02/17
     Language:Spanish
     Doctype:HTML5
-    IDE: Underscore, Mapbox
+    IDE: HTML, Underscore, Mapbox
