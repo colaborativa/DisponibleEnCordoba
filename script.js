@@ -7,6 +7,7 @@
 //
 //
 // Datos y Mapa IDs
+var DEBUG_MAP = 0;
 var map;
 var data_id = '0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc';
 var map_id = 'colaborativa.OSMCordoba';
@@ -17,6 +18,7 @@ mmg_google_docs_spreadsheet_1(data_id, mapData );
 
 // Create and set Map
 $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
+    if( DEBUG_MAP) {console.log("creating map");}
     map = mapTemp;
     map.setZoomRange(14, 16);
     map.centerzoom({ lat: 37.885, lon: -4.79 }, 14);
@@ -38,6 +40,7 @@ $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
       </div>
 */
 function mapData(f) {
+    if( DEBUG_MAP) {console.log("function mapData");}
     features = f;
     // Adding points to map
     markerLayer = mapbox.markers.layer().features(features).factory(function(f) {
@@ -105,6 +108,7 @@ https://spreadsheets.google.com/feeds/list/0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9k
 
 */
 function download_data() {
+     if( DEBUG_MAP) {console.log("function download_data");}
     $('#download_csv').attr('href', 'https://docs.google.com/spreadsheet/pub?key=' + data_id + '&output=csv');
     $('#download_json').attr('href', 'https://spreadsheets.google.com/feeds/list/' + data_id + '/od6/public/values?alt=json-in-script');
 }
