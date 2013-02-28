@@ -4,7 +4,7 @@
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta de geolocalización y visualización de edificios públicos abandonados en Córdoba, cuyo código está distribuido bajo licencia abierta CC-BY-SA 2.0. [3]. Lo que significa que se debe reconocer al autor de la web y compartir bajo la misma licencia en caso de generar obras derivadas.
+"#DisponibleEnCordoba" es una aplicación Web abierta de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [5], el servidor de mapas MapBox [6] y GoogleSpreadSheet [7]. El código fuente está distribuido bajo licencia abierta CC-BY-SA 2.0. [3], Lo cual significa que se debe reconocer al autor de la web y compartir bajo la misma licencia en caso de generar obras derivadas.
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
  
@@ -26,8 +26,6 @@ Por nuestro lado nos comprometemos a mantener la lista de "issues" y "features" 
 
 Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el método de trabajo del equipo de GitHub [4] y en especial la sección de "Contributors".
 
-
-
 ## Documentación oficial
 FALTA LINK
 
@@ -41,3 +39,6 @@ FALTA LINK
 [3]: http://creativecommons.org/licenses/by-sa/2.0/es/
 [3]: http://rdegges.com/successful-github-development
 [4]: http://colaborativa.eu
+[5]: http://www.openstreetmap.es/
+[6]: http://mapbox.com/
+[7]: https://drive.google.com/
