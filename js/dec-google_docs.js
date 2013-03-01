@@ -8,7 +8,6 @@
 //
 //     Desarrollo basado en:
 //      - https://github.com/Rub21/ayacucho/
-//      - https://github.com/ded/reqwest
 
 // Definición variables globales
 // ------------------------------
@@ -63,7 +62,7 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                     'referencia': entry['gsx$referencia'].$t, 
                 }
             };
-            // Para la latitude y longitude hay que convertir a float. 
+            // Para la latitud y longitud es necesario convertir a float. 
             for (var y in entry) {
                 if (y === latfield){
                     feature.geometry.coordinates[1] = parseFloat(entry[y].$t);
@@ -88,6 +87,7 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
         id + '/od6/public/values?alt=json-in-script&callback=callback';
     // Llamada a `reqwest`, similar a ajax, para objeter los datos en formato JSON de la spreadsheet 
     // e invocar la callback `response` una vez finalizada.
+    // Más información en: https://github.com/ded/reqwest
     reqwest({
         url: url,
         type: 'jsonp',

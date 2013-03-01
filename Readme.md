@@ -51,7 +51,7 @@ Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el m�
 * /img/: directorio con imágenes del proyecto
 * /css/: directorio con hojas de estilo CSS
 * /js/: directorio con archivos javascript que hemos desarrollado de forma espécifica para "#DisponibleEnCordoba"
-* /_site/
+* /doc/: directorio con el código javascript documentado en formato HTML.  
 
 ### Dependencias con otras librerías
 
