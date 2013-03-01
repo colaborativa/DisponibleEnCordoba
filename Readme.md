@@ -4,17 +4,18 @@
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [5], el servidor de mapas MapBox [6] y GoogleSpreadSheet [7]. Este proyecto de código abierto está distribuido bajo licencia abierta CC-BY-SA 2.0. [3]. Lo cual significa que se debe reconocer al autor de la web y compartir bajo la misma licencia en caso de generar obras derivadas.
+"#DisponibleEnCordoba" es una aplicación Web abierta de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código abierto está distribuido bajo licencia abierta CC-BY-SA 2.0. [3]. Lo cual significa que se debe reconocer al autor de la web y compartir bajo la misma licencia en caso de generar obras derivadas.
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
 
 ## ¿Cómo contribuir a #DisponibleEnCordoba?
 
 ### Añadiendo edificios a la lista
-Si queréis contribuir a añadir edificios públicos abandonados al mapa envíanos un un email a info@colaborativa.eu incluyendo: 
+Si queréis contribuir a añadir edificios públicos abandonados al mapa envíanos un email a info@colaborativa.eu incluyendo: 
 
     - Localización del edificio abandonado
     - Estado actual
+    - Fotografías
     - Links a prensa o información oficial.
  
 ### Desarrollando software
@@ -29,9 +30,11 @@ Si queréis contribuir en el desarrollo software del proyecto os recomendamos:
 
 Para garantizar una buena coordinación entre todos los contribuidores de "#DisponibleEnCordoba", nos gustaría animaros a seguir una serie de recomendaciones:
 
-    - Solicitar nuevas mejoras
+    - Consultar la lista de mejoras existentes y solicitar nuevas
     - Documentar "bugs" o comportamientos extraños
     - Listar las tareas pendientes de desarrollo
+    - Utilizar el mismo estilo de código que en el resto del proyecto
+    - Antes de enviar un "pull request" de una mejora, asegurarse que funciona correctamente y que ha superado una serie de tests
     - No olvidar referenciar "issues" en Git Commits cuando se resuelvan.
 
 Por nuestro lado nos comprometemos a mantener la lista de "issues" y "features" actualizada en todo momento.
@@ -40,36 +43,48 @@ Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el m�
 
 ## Instalación
 
+[FALTA Incluir comando de git para hacer fork o clone]
+
 ### Sobre los archivos del proyecto
 
-* /ext/
-* /img/
-* /css/
+* /ext/: directorio con librerías javascript de terceros necesarias: jquery, mapbox y underscore
+* /img/: directorio con imágenes del proyecto
+* /css/: directorio con hojas de estilo CSS
+* /js/: directorio con archivos javascript que hemos desarrollado de forma espécifica para "#DisponibleEnCordoba"
 * /_site/
 
 ### Dependencias con otras librerías
 
-* underscore.min.js
-* mapbox.share.js
-* mapbox.jquery.js
-* mapbox.jquery.geocoder.js
-* jquery.min.js
-* jquery.emailSpamProtection.js
+* Mapbox [9]
+* jQuery [10]
+* Underscore [11]
+* jQuery emailSpamProtection [12]
 
 
 ## Documentación oficial
-FALTA LINK
+Más información sobre el proyecto en [1] y [2].
 
-## Créditos
+## Autores y créditos
 
-"#DisponibleEnCordoba" es un proyecto impulsado por colaborativa.eu [4].
+"#DisponibleEnCordoba" v1.0 es un proyecto impulsado y desarrollado por colaborativa.eu [5]. Posteriormente abierto y publicado en GitHub para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
 
+Muchas gracias a todos los contribuidores [FALTA LINK A GITHUB].
+
+"#DisponibleEnCordoba" utiliza el proyecto de código abierto MapBox All rights reserved, Copyright (c), [7]. Consultar los términos de su licencia para más información [13].
+
+"#DisponibleEnCordoba" utiliza el componente de código abierto Underscore, Copyright (c) 2009-2013 Jeremy Ashkenas, DocumentCloud [11]. Consultar los términos de su licencia para más información [14]. 
 
 [1]: http://disponibleencordoba.colaborativa.eu
 [2]: http://colaborativa.eu/proyectos/disponible-en-cordoba/
 [3]: http://creativecommons.org/licenses/by-sa/2.0/es/
-[3]: http://rdegges.com/successful-github-development
-[4]: http://colaborativa.eu
-[5]: http://www.openstreetmap.es/
-[6]: http://mapbox.com/
-[7]: https://drive.google.com/
+[4]: http://rdegges.com/successful-github-development
+[5]: http://colaborativa.eu
+[6]: http://www.openstreetmap.es/
+[7]: http://mapbox.com/
+[8]: https://drive.google.com/
+[9]: http://mapbox.com/mapbox.js/api/v0.6.7/
+[10]: http://jquery.org/
+[11]: http://underscorejs.org
+[12]: http://unckel.de/labs/jquery-plugin-email-spam-protection/
+[13]: https://github.com/mapbox/mapbox.js/blob/v1/LICENSE.md
+[14]: https://github.com/documentcloud/underscore/blob/master/LICENSE

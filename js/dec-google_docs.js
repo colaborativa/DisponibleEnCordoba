@@ -1,21 +1,38 @@
+//     dec-google_docs.js 1.0
+//     
+//     (c) colaborativa.eu 2013 
+//     http://colaborativa.eu/proyectos/disponible-en-cordoba/
 //
+//     dec-google_docs.js está distribuido 
+//     bajo licencia CC BY-SA 2.0 ES.
 //
-// https://github.com/Rub21/ayacucho/blob/gh-pages/ext/google_docs.js
-// https://github.com/ded/reqwest
-// http://mapbox.com/blog/mapbox-fusion-tables-drones/
-//
+//     Desarrollo basado en:
+//      - https://github.com/Rub21/ayacucho/
+//      - https://github.com/ded/reqwest
+
+// Definición variables globales
+// ------------------------------
 var DEBUG_GOOGLE = 0;
+
+// Función Auxiliar
+// --------------------
+// Esta función extrae la información de la spreadsheet de Google Drive con el `id` especificado. 
+// Al concluir invocará a la callback especificada como argumento de entrada.
 function mmg_google_docs_spreadsheet_1(id, callback) {
     if( DEBUG_GOOGLE) { console.log("function mmg_google_docs_spreadsheet_1");}
+    // Chequear que `reqwest` existe para así poder comunicarnos con Google Drive.
     if (typeof reqwest === 'undefined'){
         console.log("CSV: reqwest required for mmg_csv_url");
     }
-
+    // La función `response` se ejecutará una vez concluída la llamada a `reqwest` invocada más abajo.
+    // Se encargará de extraer cada fila de la spreadsheet, localizar cada columna (título, dirección, etc.)
+    // y almacenar todos los datos en la variable array `features`.
     function response(x) {
         if( DEBUG_GOOGLE) { console.log("function response");}
         var features = [],
             latfield = '',
             lonfield = '';
+        // Chequear que los datos son válidos antes de continuar.
         if (!x || !x.feed) return features;
         for (var f in x.feed.entry[0]) {
             if (f.match(/\$Lat/i)){
@@ -25,15 +42,15 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 lonfield = f;     
             }
         }
-
+        // Bucle for para cada fila de la spreadsheet, que corresponde con un edificio abandonado.
         for (var i = 0; i < x.feed.entry.length; i++) {                             
             var entry = x.feed.entry[i];
-            //console.log(entry);
             var feature = {
                 geometry: {
                     type: 'Point',
                     coordinates: []
                 },
+                // Obtener cada columna de la fila actual en formato texto.
                 properties: {
                     'marker-color':'#0d5ca8',
                     'titulo': entry['gsx$titulo'].$t,
@@ -46,14 +63,13 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                     'referencia': entry['gsx$referencia'].$t, 
                 }
             };
+            // Para la latitude y longitude hay que convertir a float. 
             for (var y in entry) {
                 if (y === latfield){
                     feature.geometry.coordinates[1] = parseFloat(entry[y].$t);
-                    //console.log("coordinate latfield "+ feature.geometry.coordinates[1]); 
                 }
                 else if (y === lonfield) {
                     feature.geometry.coordinates[0] = parseFloat(entry[y].$t);
-                    //console.log("coordinate lonfield "+ feature.geometry.coordinates[0]); 
                 }
                 else if (y.indexOf('gsx$') === 0) {                            
                     feature.properties[y.replace('gsx$', '')] = entry[y].$t;
@@ -62,20 +78,16 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
             
             if (feature.geometry.coordinates.length == 2){
                  features.push(feature);
-                 //console.log("feature.geometry.coordinates"+feature.geometry.coordinates.length);
             }
-            //console.log(features);
-           /* _.each(feature, function(value, key) {
-                if(feature.properties['categoria']=="Robo"){ feature.properties['marker-color']='#CB3344'} 
-                if(feature.properties['categoria']=="Intento de Robo") {feature.properties['marker-color']='#FFCC33'}
-                if(feature.properties['categoria']=="Agresión") { feature.properties['marker-color']='#653332'}   
-            }); */
         }
+        // Llamar a la función callback con el array `features` como dato de entrada.
         return callback(features);
     }
+    // Definimos la URL con el ID de nuestra spreadsheet en Google Drive.
     var url = 'http://spreadsheets.google.com/feeds/list/' +
         id + '/od6/public/values?alt=json-in-script&callback=callback';
-    //console.log(url);
+    // Llamada a `reqwest`, similar a ajax, para objeter los datos en formato JSON de la spreadsheet 
+    // e invocar la callback `response` una vez finalizada.
     reqwest({
         url: url,
         type: 'jsonp',
@@ -83,6 +95,9 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
         success: response,
         error: response
     });
-    // problem when browser needs to add security exceptio for this request
+    // Nota: algunos exploradores tienen restringido el acceso a ciertas Webs por motivos de seguridad. 
+    // Google Drive es una de ellas. Si tenemos algún problema al realizar la llamada `reqwest` una manera de 
+    // testear si el explorador está bloqueando las llamadas es directamente copiar y pegar la URL en el explorador, y observar 
+    // los mensajes de salida.
 }
 

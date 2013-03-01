@@ -1,22 +1,30 @@
+//     dec-principal.js 1.0
+//     
+//     (c) colaborativa.eu 2013 
+//     http://colaborativa.eu/proyectos/disponible-en-cordoba/
 //
+//     dec-principal.js  está distribuido 
+//     bajo licencia CC BY-SA 2.0 ES.
 //
-// Project: DisponibleEnCordoba
-// Author: Magda Sanchez from Colaborativa.eu
-// Last Updated:
-//      14-02-2012: Adding on click show marker info on left window with id contentDetail. 
-//
-//
-// Datos y Mapa IDs
+
+// Definición variables globales
+// ------------------------------
 var DEBUG_MAP = 0;
 var map;
+// Definición de los identificadores para el mapa y la fuente de los datos en **Google Drive**.
+// Sustituir por vuestros identificadores específicos.
 var data_id = '0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc';
 var map_id = 'colaborativa.OSMCordoba';
 
-// Extracting Data from Google Drive, on finished call mapData function
-mmg_google_docs_spreadsheet_1(data_id, mapData );
+// Función Principal
+// ------------------------------
+// Obtención de los datos de la spreadsheet en **Google Drive**. 
+// La función `mg_google_docs_spreadsheet_1` está definida en `dec-google_docs.js`.
+// Al terminar y ya que se ha definido callback, se invocará la función mapData definida más abajo.
+mmg_google_docs_spreadsheet_1(data_id, mapData);
 
 
-// Create and set Map
+// Creación e inicialización del objeto mapa
 $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
     if( DEBUG_MAP) {console.log("creating map");}
     map = mapTemp;
@@ -25,42 +33,36 @@ $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
     map.setPanLimits([{ lat: 37.9452, lon: -4.8641 }, { lat: 37.8133, lon: -4.6835 }]);
     map.zoom(14, true);
 });
-// Load points
-/*
-    <div id="contentDetail">
-    </div>
-    // <div class="limiter">
-        <div id="about">
-          <h1 class='map-title'>
-          </h1>
-          <h2></h2>
-          <p class='description'></p>
-        </div>
-        <p class="footer"></p>
-      </div>
-*/
+
+// Funciones Auxiliares
+// --------------------
+// La función `mapData` se encarga de definir todas las capas del mapa, crear los markers (pinchos),
+// definir los eventos asociados a acciones sobre el mapa (mouse click, mouse over) y
+// añadir información en la barra lateral izquiera sobre el marker (pincho o edificio) seleccionado.
 function mapData(f) {
     if( DEBUG_MAP) {console.log("function mapData");}
+    // La variable `f` contiene todos los markers del mapa, cada uno con sus propiedades asociadas: 
+    // título, descripción, etc.
     features = f;
-    // Adding points to map
+     // Ahora se añaden los markers al mapa.  
     markerLayer = mapbox.markers.layer().features(features).factory(function(f) {
         var elem = mapbox.markers.simplestyle_factory(f);
-        MM.addEvent(elem, 'click', function(e) {
-           // f.properties.titulo f.properties.direccion f.properties.descripcion f.properties.estado 
-           // f.properties.enlace f.properties.categoria f.properties.masinfo 
+        // Y una acción asociada al evento `mouse click on marker` La barra lateral izquierda se rellenará
+        // con todos los datos del marker o del edificio abandonado seleccionado por el usuario.
+        MM.addEvent(elem, 'click', function(e) { 
             var imagen='';
             var masinfo='';
             var descripcion='';
             var direccion='';       
             var titulo = '<h2>' + f.properties.titulo + '</h2>'
-            $('#contentDetail').removeClass('inactivo').addClass('activo'); //css('display','block');
-            $('#contentDetail').html(''); // clean current div structure
+            $('#contentDetail').removeClass('inactivo').addClass('activo'); 
+            $('#contentDetail').html('');
             $('#contentDetail').append('<a class="closeWindow" href="#">&#10006;</a><script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'); 
             $('#contentDetail').append('<h1 class="map-title"><span class="element-invisible">#DisponibleEnCordoba</span></h1>');
-            $('#contentDetail').append(titulo); // h1 class='map-title'
+            $('#contentDetail').append(titulo); 
             if( f.properties.direccion  != ''){
                 direccion = '<h3>' + f.properties.direccion + '</h3>';
-                $('#contentDetail').append(direccion); // h2 direccion
+                $('#contentDetail').append(direccion); 
             }
             if( f.properties.enlace != ''){
                 imagen = '<div class="imagen"><img src="' + f.properties.enlace + '" alt="' + f.properties.titulo + '"></div>';
@@ -83,11 +85,12 @@ function mapData(f) {
         return elem;
     });
     
-    // Adding interaction layer
+    // Añadir la capa de interacción definida al mapa.
     interaction = mapbox.markers.interaction(markerLayer);
     map.addLayer(markerLayer);
     
-    // Defining interactive layer
+    // Definir una capa interactiva por defecto a cada marker que mostrará la dirección y el título 
+    // cuando se active el evento `mouse over` de cada marker.
     interaction.formatter(function (feature) {
         var direccion='';       
         if( feature.properties.direccion  != ''){
@@ -96,18 +99,15 @@ function mapData(f) {
         var o = '<h2>' + feature.properties.titulo + '</h2>' + direccion;
         return o;
     });
+    // Llamada a la función `download_data` definida más abajo.
     download_data();
 }
-/*
-Function for put href for download data
-URL Spreadsheet #DisponibleEnCordoba
-https://docs.google.com/spreadsheet/pub?key=0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc&single=true&gid=0&output=csv
-https://docs.google.com/spreadsheet/pub?key=0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc&single=true&gid=0&output=csv
-https://spreadsheets.google.com/feeds/list/0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc/od6/public/values?alt=json-in-script
-
-*/
+// La función `download_data` introducirá los enlaces a los datos abiertos en formato CSV y JSON en el HTML.
+// Utiliza la variable `data_id definida al comienzo para obtener los datos de **Google Drive SpreadSheet**.
 function download_data() {
      if( DEBUG_MAP) {console.log("function download_data");}
+    // La llamada URL para formato `CSV` es:
     $('#download_csv').attr('href', 'https://docs.google.com/spreadsheet/pub?key=' + data_id + '&output=csv');
+    // La llamada URL para formato `JSON` es:
     $('#download_json').attr('href', 'https://spreadsheets.google.com/feeds/list/' + data_id + '/od6/public/values?alt=json-in-script');
 }
