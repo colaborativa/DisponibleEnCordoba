@@ -4,7 +4,7 @@
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código abierto está distribuido bajo licencia abierta CC-BY-SA 2.0. [3]. Lo cual significa que se debe reconocer al autor de la web y compartir bajo la misma licencia en caso de generar obras derivadas.
+"#DisponibleEnCordoba" es una aplicación Web abierta de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 [3].
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
 
@@ -66,13 +66,16 @@ Más información sobre el proyecto en [1] y [2].
 
 ## Autores y créditos
 
-"#DisponibleEnCordoba" v1.0 es un proyecto impulsado y desarrollado por colaborativa.eu [5]. Posteriormente abierto y publicado en GitHub para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
+"#DisponibleEnCordoba" v1.0 es un proyecto impulsado y mantenido por colaborativa.eu [5]. Posteriormente liberado y publicado en GitHub para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
 
 Muchas gracias a todos los contribuidores [FALTA LINK A GITHUB].
 
 "#DisponibleEnCordoba" utiliza el proyecto de código abierto MapBox All rights reserved, Copyright (c), [7]. Consultar los términos de su licencia para más información [13].
 
 "#DisponibleEnCordoba" utiliza el componente de código abierto Underscore, Copyright (c) 2009-2013 Jeremy Ashkenas, DocumentCloud [11]. Consultar los términos de su licencia para más información [14]. 
+## Contacto
+
+Puedes escribirnos un email a info@colaborativa.eu.
 
 [1]: http://disponibleencordoba.colaborativa.eu
 [2]: http://colaborativa.eu/proyectos/disponible-en-cordoba/
@@ -88,3 +91,4 @@ Muchas gracias a todos los contribuidores [FALTA LINK A GITHUB].
 [12]: http://unckel.de/labs/jquery-plugin-email-spam-protection/
 [13]: https://github.com/mapbox/mapbox.js/blob/v1/LICENSE.md
 [14]: https://github.com/documentcloud/underscore/blob/master/LICENSE
+[15]: http://opensource.org/licenses/MIT

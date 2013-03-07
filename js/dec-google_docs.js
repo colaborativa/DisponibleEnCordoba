@@ -1,10 +1,7 @@
-//     dec-google_docs.js 1.0
+//     dec-google_docs.js 1.0 under MIT license
 //     
-//     (c) colaborativa.eu 2013 
+//     2013  (c) colaborativa.eu and contributors
 //     http://colaborativa.eu/proyectos/disponible-en-cordoba/
-//
-//     dec-google_docs.js está distribuido 
-//     bajo licencia CC BY-SA 2.0 ES.
 //
 //     Desarrollo basado en:
 //      - https://github.com/Rub21/ayacucho/

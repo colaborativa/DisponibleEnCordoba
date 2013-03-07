@@ -1,11 +1,7 @@
-//     dec-principal.js 1.0
+//     dec-principal.js 1.0  under MIT license
 //     
-//     (c) colaborativa.eu 2013 
+//     2013  (c) colaborativa.eu and contributors
 //     http://colaborativa.eu/proyectos/disponible-en-cordoba/
-//
-//     dec-principal.js  está distribuido 
-//     bajo licencia CC BY-SA 2.0 ES.
-//
 
 // Definición variables globales
 // ------------------------------
