@@ -79,7 +79,7 @@ Puedes escribirnos un email a info@colaborativa.eu.
 
 [1]: http://disponibleencordoba.colaborativa.eu
 [2]: http://colaborativa.eu/proyectos/disponible-en-cordoba/
-[3]: http://creativecommons.org/licenses/by-sa/2.0/es/
+[3]: http://creativecommons.org/licenses/by-sa/3.0/
 [4]: http://rdegges.com/successful-github-development
 [5]: http://colaborativa.eu
 [6]: http://www.openstreetmap.es/
