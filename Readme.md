@@ -1,6 +1,6 @@
 # Bienvenidos a "#DisponibleEnCordoba"
 
-[![Build Status](https://travis-ci.org/colaborativa/disponibleencordoba.png)](https://travis-ci.org/colaborativa/disponibleencordoba)
+[![Build Status](https://travis-ci.org/colaborativa/DisponibleEnCordoba.png)](https://travis-ci.org/colaborativa/DisponibleEnCordoba)
 
 
 “#DisponibleEnCordoba” quiere visualizar el patrimonio público sin uso de Córdoba [1]. En Córdoba existen decenas de edificios públicos abandonados en buen estado de conservación. Mientras tanto, numerosas asociaciones, colectivos y organizaciones carecen de espacio [2].
