@@ -1,0 +1,35 @@
+#To deploy the site, run rake deploy
+#To deploy a different environment, run rake deploy env=production
+#The same applies for launch:
+#rake launch
+#rake launch env=production
+#This command will open the environment in your default browser
+
+begin
+  require 'rubygems'
+  require 'bundler'
+  require 'yaml'
+rescue LoadError
+  raise "Could not load the bundler gem. Install it with `gem install bundler`."
+end
+
+begin
+  Bundler.setup
+rescue Bundler::GemNotFound
+  raise RuntimeError, "Bundler couldn't find some gems. Did you run `bundle install`?"
+end
+
+config_file = '_config.yml'
+config = YAML.load_file(config_file)
+
+task :default => :launch
+ 
+task :deploy do
+  env = ENV['env'] || 'production'
+  sh "jekyll"
+end
+
+task :launch do
+  env = ENV['env'] || 'development'
+  sh "jekyll"
+end
