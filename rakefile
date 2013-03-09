@@ -25,11 +25,9 @@ config = YAML.load_file(config_file)
 task :default => :launch
  
 task :deploy do
-  env = ENV['env'] || 'production'
   sh "jekyll"
 end
 
 task :launch do
-  env = ENV['env'] || 'development'
   sh "jekyll"
 end

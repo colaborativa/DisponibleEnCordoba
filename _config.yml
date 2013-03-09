@@ -1,7 +1,2 @@
 exclude: [ "CNAME", "Makefile", "LICENSE", "Gemfile", "Gemfile.lock", "rakefile" ]
 url: http://disponibleencordoba.colaborativa.eu
-environments:
- development:
-  url: http://localhost:4000
- production:
-  url: http://disponibleencordoba.colaborativa.eu
