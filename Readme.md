@@ -3,11 +3,11 @@
 [![Build Status](https://travis-ci.org/colaborativa/DisponibleEnCordoba.png)](https://travis-ci.org/colaborativa/DisponibleEnCordoba)
 
 
-“#DisponibleEnCordoba” quiere visualizar el patrimonio público sin uso de [Córdoba] [1]. En Córdoba existen decenas de edificios públicos abandonados en buen estado de conservación. Mientras tanto, numerosas asociaciones, colectivos y organizaciones carecen de espacio [2].
+[“#DisponibleEnCordoba”][1] quiere visualizar el patrimonio público sin uso de Córdoba. En Córdoba existen decenas de edificios públicos abandonados en buen estado de conservación. Mientras tanto, numerosas asociaciones, colectivos y organizaciones carecen de espacio. Para más información visitar la descripción del proyecto en [colaborativa.eu] [2].
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en [GitHub] [18], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 ES [3].
+"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en [GitHub] [18], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en [OpenStreetMaps][6], el servidor de mapas [MapBox][7] y [GoogleSpreadSheet][8]. Este proyecto de código libre está distribuido bajo [licencia MIT][15]. Los textos e imágenes bajo una licencia creative commons [CC BY 3.0 ES][3].
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
 
@@ -42,7 +42,7 @@ Para garantizar una buena coordinación entre todos los contribuidores de "#Disp
 
 Por nuestro lado nos comprometemos a mantener la lista de ["issues" y "features"] [16] actualizada en todo momento.
 
-Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el método de trabajo del equipo de [GitHub] [4] y en especial la sección de "Contributors".
+Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el [método de trabajo del equipo de GitHub] [4] y en especial la sección de "Contributors".
 
 ## Instalación
 
@@ -58,41 +58,46 @@ A continuación clonar el "Fork" en tu ordenador:
 
     $ git clone https://github.com/username/DisponibleEnCordoba.git
 
-Para más información sobre qué es un [Fork visitar] [17].
+Consultar más información sobre [qué es un Fork] [17].
 
 ### Sobre los archivos del proyecto
 
-* /ext/: directorio con librerías javascript de terceros necesarias; jquery, mapbox y underscore
-* /img/: directorio con imágenes del proyecto
-* /css/: directorio con hojas de estilo CSS
-* /js/: directorio con archivos Javascript/jQuery que hemos desarrollado de forma espécifica para "#DisponibleEnCordoba"
-    * "dec-google_docs.js v1.0": función que actúa como interfaz con Google spreadsheet
-    * "dec-principal.js v1.0": función principal que añade los marcadores en el mapa de acuerdo con la información contenida en Google spreadsheet.
-* /docs/: directorio con el código documentado en formato HTML. 
-    * [dec-google_docs.html] [20]: documentación del código en "dec-google_docs.js"
-    * [dec-principal.html] [19]: documentación del código en "dec-principal.js".
+- /ext/: directorio con librerías javascript de terceros necesarias; jquery, mapbox y underscore
+- /img/: directorio con imágenes del proyecto
+- /css/: directorio con hojas de estilo CSS
+- /js/: directorio con archivos Javascript/jQuery que hemos desarrollado de forma espécifica para "#DisponibleEnCordoba"
+ 
+ dec-google_docs.js v1.0: función que actúa como interfaz con Google spreadsheet
+ 
+ dec-principal.js v1.0: función principal que añade los marcadores en el mapa de acuerdo con la información contenida en Google spreadsheet.
+
+- /docs/: directorio con el código documentado en formato HTML. 
+
+ [dec-google_docs.html] [20]: documentación del código en "dec-google_docs.js"
+ 
+ [dec-principal.html] [19]: documentación del código en "dec-principal.js".
 
 ### Dependencias con otras librerías
 
-* [Mapbox] [9]
-* [jQuery] [10]
-* [Underscore] [11]
-* [jQuery emailSpamProtection] [12]
+- [Mapbox] [9]
+- [jQuery] [10]
+- [Underscore] [11]
+- [jQuery emailSpamProtection] [12]
 
 
 ## Documentación oficial
-Más información sobre el proyecto en [1] y [2].
-La documentación del código está disponible en [19] y [20].
+Más información sobre el proyecto en [la web propia] [1] y en [colaborativa.eu][2].
+La documentación del código Javascript/JQuery está disponible en [dec-principal.html][19] y [dec-google_docs.html] [20].
 
 ## Autores y créditos
 
-"#DisponibleEnCordoba" v1.0 es un proyecto impulsado y mantenido por colaborativa.eu [5]. Posteriormente liberado y publicado en GitHub [18] para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
+"#DisponibleEnCordoba" v1.0 es un proyecto impulsado y mantenido por [colaborativa.eu] [5]. Posteriormente liberado y publicado en [GitHub] [18] para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
 
-Muchas gracias a todos los contribuidores [16].
+Muchas gracias a todos los [contribuidores] [16].
 
-"#DisponibleEnCordoba" utiliza el proyecto de código abierto MapBox All rights reserved, Copyright (c), [7]. Consultar los términos de su licencia para más información [13].
+"#DisponibleEnCordoba" utiliza el proyecto de código abierto [MapBox] [7] All rights reserved, Copyright (c). Consultar los términos de su [licencia][13] para más información .
 
-"#DisponibleEnCordoba" utiliza el componente de código abierto Underscore, Copyright (c) 2009-2013 Jeremy Ashkenas, DocumentCloud [11]. Consultar los términos de su licencia para más información [14]. 
+"#DisponibleEnCordoba" utiliza el componente de código abierto [Underscore] [11], Copyright (c) 2009-2013 Jeremy Ashkenas, DocumentCloud. Consultar los términos de su [licencia] [14] para más información. 
 ## Contacto
 
 Puedes escribirnos un email a info@colaborativa.eu.
