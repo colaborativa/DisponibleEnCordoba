@@ -24,8 +24,8 @@ config = YAML.load_file(config_file)
 
 task :default => :launch
  
-task :deploy do
-  sh "jekyll"
+task :test do
+  sh "jekyll --auto --server"
 end
 
 task :launch do
