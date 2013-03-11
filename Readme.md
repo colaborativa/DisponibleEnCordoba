@@ -7,7 +7,7 @@
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en GitHub [18], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 [3].
+"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en GitHub [18], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 ES [3].
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
 
@@ -86,7 +86,7 @@ La documentación del código está disponible en [19] y [20].
 
 ## Autores y créditos
 
-"#DisponibleEnCordoba" v1.0 es un proyecto impulsado y mantenido por colaborativa.eu [5]. Posteriormente liberado y publicado en GitHub para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
+"#DisponibleEnCordoba" v1.0 es un proyecto impulsado y mantenido por colaborativa.eu [5]. Posteriormente liberado y publicado en GitHub [18] para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
 
 Muchas gracias a todos los contribuidores [16].
 
@@ -99,7 +99,7 @@ Puedes escribirnos un email a info@colaborativa.eu.
 
 [1]: http://disponibleencordoba.colaborativa.eu
 [2]: http://colaborativa.eu/proyectos/disponible-en-cordoba/
-[3]: http://creativecommons.org/licenses/by-sa/3.0/
+[3]: http://creativecommons.org/licenses/by/3.0/es/
 [4]: http://rdegges.com/successful-github-development
 [5]: http://colaborativa.eu
 [6]: http://www.openstreetmap.es/
