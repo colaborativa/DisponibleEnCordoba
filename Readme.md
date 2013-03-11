@@ -7,7 +7,7 @@
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en GitHub [17], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 [3].
+"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en GitHub [18], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 [3].
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
 
@@ -25,22 +25,22 @@ Si queréis contribuir a añadir edificios públicos abandonados al mapa envían
 
 Si queréis contribuir en el desarrollo software del proyecto os recomendamos:
 
-    - Consultar la lista de "issues" o "features" [16] (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
-    - Si has encontrado un problema puedes documentarlo en la lista de "issues" del proyecto en GitHub [16]
-    - Si has identificado alguna mejora puedes documentarla en la lista de "features" del proyecto en GitHub [16] 
+    - Consultar la lista de "issues" o "features" (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
+    - Si has encontrado un problema puedes documentarlo en la lista de "issues" del proyecto en GitHub
+    - Si has identificado alguna mejora puedes documentarla en la lista de "features" del proyecto en GitHub 
     - También puedes consultar la lista de "issues" actual y realizar aportaciones a través de comentarios.
 
 
 Para garantizar una buena coordinación entre todos los contribuidores de "#DisponibleEnCordoba", nos gustaría animaros a seguir una serie de recomendaciones:
 
-    - Consultar la lista de mejoras existentes y solicitar nuevas [16] 
+    - Consultar la lista de mejoras existentes y solicitar nuevas
     - Documentar "bugs" o comportamientos extraños
-    - Listar las tareas pendientes de desarrollo [16] 
+    - Listar las tareas pendientes de desarrollo 
     - Utilizar el mismo estilo de código que en el resto del proyecto
     - Antes de enviar un "pull request" de una mejora, asegurarse que funciona correctamente y que ha superado una serie de tests
     - No olvidar referenciar "issues" en Git Commits cuando se resuelvan.
 
-Por nuestro lado nos comprometemos a mantener la lista de "issues" y "features" actualizada en todo momento.
+Por nuestro lado nos comprometemos a mantener la lista de "issues" y "features" [16] actualizada en todo momento.
 
 Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el método de trabajo del equipo de GitHub [4] y en especial la sección de "Contributors".
 
