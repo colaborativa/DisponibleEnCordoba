@@ -7,7 +7,7 @@
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 [3].
+"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en GitHub [17], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 [3].
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
 
@@ -25,17 +25,17 @@ Si queréis contribuir a añadir edificios públicos abandonados al mapa envían
 
 Si queréis contribuir en el desarrollo software del proyecto os recomendamos:
 
-    - Consultar la lista de "issues" o "features" (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
-    - Si has encontrado un problema puedes documentarlo en la lista de "issues" del proyecto en GitHub
-    - Si has identificado alguna mejora puedes documentarla en la lista de "features" del proyecto en GitHub
+    - Consultar la lista de "issues" o "features" [16] (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
+    - Si has encontrado un problema puedes documentarlo en la lista de "issues" del proyecto en GitHub [16]
+    - Si has identificado alguna mejora puedes documentarla en la lista de "features" del proyecto en GitHub [16] 
     - También puedes consultar la lista de "issues" actual y realizar aportaciones a través de comentarios.
 
 
 Para garantizar una buena coordinación entre todos los contribuidores de "#DisponibleEnCordoba", nos gustaría animaros a seguir una serie de recomendaciones:
 
-    - Consultar la lista de mejoras existentes y solicitar nuevas
+    - Consultar la lista de mejoras existentes y solicitar nuevas [16] 
     - Documentar "bugs" o comportamientos extraños
-    - Listar las tareas pendientes de desarrollo
+    - Listar las tareas pendientes de desarrollo [16] 
     - Utilizar el mismo estilo de código que en el resto del proyecto
     - Antes de enviar un "pull request" de una mejora, asegurarse que funciona correctamente y que ha superado una serie de tests
     - No olvidar referenciar "issues" en Git Commits cuando se resuelvan.
@@ -46,15 +46,31 @@ Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el m�
 
 ## Instalación
 
-[FALTA Incluir comando de git para hacer fork o clone]
+### Clonar el repositorio en local
+
+$ git clone git://github.com/colaborativa/DisponibleEnCordoba.git
+
+### Hacer un Fork del repositorio 
+
+Primero hacer click en el botón "Fork" del proyecto #DisponibleEnCordoba en GitHub. [18]
+
+A continuación clonar el "Fork" en tu ordenador:
+
+$ git clone https://github.com/username/DisponibleEnCordoba.git
+
+Para más información sobre qué es un Fork visitar [17].
 
 ### Sobre los archivos del proyecto
 
-* /ext/: directorio con librerías javascript de terceros necesarias: jquery, mapbox y underscore
+* /ext/: directorio con librerías javascript de terceros necesarias; jquery, mapbox y underscore
 * /img/: directorio con imágenes del proyecto
 * /css/: directorio con hojas de estilo CSS
-* /js/: directorio con archivos javascript que hemos desarrollado de forma espécifica para "#DisponibleEnCordoba"
-* /doc/: directorio con el código javascript documentado en formato HTML.  
+* /js/: directorio con archivos Javascript/jQuery que hemos desarrollado de forma espécifica para "#DisponibleEnCordoba"
+    * "dec-google_docs.js v1.0": función que actúa como interfaz con Google spreadsheet
+    * "dec-principal.js v1.0": función principal que añade los marcadores en el mapa de acuerdo con la información contenida en Google spreadsheet.
+* /docs/: directorio con el código documentado en formato HTML. 
+    * "dec-google_docs.html": documentación del código en "dec-google_docs.js"
+    * "dec-principal.html": documentación del código en "dec-principal.js".
 
 ### Dependencias con otras librerías
 
@@ -71,7 +87,7 @@ Más información sobre el proyecto en [1] y [2].
 
 "#DisponibleEnCordoba" v1.0 es un proyecto impulsado y mantenido por colaborativa.eu [5]. Posteriormente liberado y publicado en GitHub para fomentar su utilización en otras aplicaciones de geolocalización, y su continua evolución y mejora por parte de todo el mundo que desee contribuir al proyecto.
 
-Muchas gracias a todos los contribuidores [FALTA LINK A GITHUB].
+Muchas gracias a todos los contribuidores [16].
 
 "#DisponibleEnCordoba" utiliza el proyecto de código abierto MapBox All rights reserved, Copyright (c), [7]. Consultar los términos de su licencia para más información [13].
 
@@ -95,3 +111,6 @@ Puedes escribirnos un email a info@colaborativa.eu.
 [13]: https://github.com/mapbox/mapbox.js/blob/v1/LICENSE.md
 [14]: https://github.com/documentcloud/underscore/blob/master/LICENSE
 [15]: http://opensource.org/licenses/MIT
+[16]: https://github.com/colaborativa/DisponibleEnCordoba/issues
+[17]: https://help.github.com/articles/fork-a-repo
+[18]: https://github.com/colaborativa/DisponibleEnCordoba
