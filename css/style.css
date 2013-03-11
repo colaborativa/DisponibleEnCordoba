@@ -1,6 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License:none (public domain)
+/* css RESET
  */
 
 html, body, div, span, applet, object, iframe,
@@ -23,7 +21,6 @@ time, mark, audio, video {
   font:inherit;
   vertical-align:baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display:block;
@@ -47,14 +44,10 @@ table {
   border-spacing:0;
 }
 
-/* Typography */
-@font-face {
-  font-family: 'ColaborativaSemibold';
-  src: url("fonts/colaborativasemibold-webfont.eot");
-  src: url("fonts/colaborativasemibold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/colaborativasemibold-webfont.woff") format("woff"), url("fonts/colaborativasemibold-webfont.ttf") format("truetype"), url("fonts/colaborativasemibold-webfont.svg#ColaborativaSemiboldRegular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
+
+/* Typography & Base styles
+*/
 body,
 input,
 textarea {
@@ -71,13 +64,43 @@ code { font:normal 12px/20px monospace; }
 h1, h2, h3, h4, h5, h6 {
   margin:0 0 10px 0;
 }
+p{
+  color: #0d5ca8;
+}
+
+p { margin-bottom:20px;}
+strong { font-weight:bold; }
+a, a:link, a:visited, a:active{
+  color: #0d5ca8;
+  text-decoration:underline;
+}
+a:hover{
+  color: #2c91f3;
+}
+/* General styles
+*/
 .element-invisible {
+  /* For hiding elements but keeping them indexable */
   position: absolute !important;
   height: 1px; width: 1px; 
   overflow: hidden;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 }
+/* Clearfix */
+
+.clearfix:after {
+ visibility: hidden;
+ display: block;
+ font-size: 0;
+ content: " ";
+ clear: both;
+ height: 0;
+}
+.clearfix { display: inline-block; }
+
+/* CloseIcon in detail view
+*/
 .closeWindow{
   position: absolute;
   right: 3px;
@@ -93,6 +116,11 @@ h1, h2, h3, h4, h5, h6 {
 .closeWindow:hover{
   color: #2c91f3;
 }
+
+/* Intro sidebar with project description
+*/
+/* Main branding title
+*/
 h1 {
   background:url(../img/disponibleEnCordoba.png) top center no-repeat;
   background-size: contain;
@@ -110,6 +138,8 @@ h1 {
   color: #0d5ca8;
   z-index: 1000;
 }
+/* Subtitle
+*/
 h2 {
   color: #0d5ca8;
   line-height:1.5em;
@@ -118,30 +148,16 @@ h2 {
   padding-bottom: 25px;
   margin-bottom: 0px;
 }
-#contentDetail h2{
-  padding-bottom: 5px;
-}
-p{
-  color: #0d5ca8;
-}
-a, a:link, a:visited, a:active{
-  color: #0d5ca8;
-  text-decoration:underline;
-}
-a:hover{
-  color: #2c91f3;
-}
-.imagen img{
-  width: 100%;
-  margin-top: 3px;
-  margin-bottom: 20px;
-  border: 1px solid #4B7CAB;
-}
 .footer{
   margin-top: 20px;
   font-size:0.9em;
   line-height: 1.3em;
 }
+
+
+/* Marker POPUP
+*/
+
 .marker-popup::before {
   border-top-color: #999!important;
   border-width: 16px!important;
@@ -173,8 +189,9 @@ a:hover{
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-/* Layout */
 
+/* Layout 
+*/
 body > div {
   position:relative;
   z-index:1;
@@ -186,9 +203,29 @@ body > div {
   bottom:0;
   left:340px;
   z-index:0;
-  /*background:url(../img/background.png) repeat;*/
 }
-
+a.zoomer {
+  position: absolute;
+  top: 10px;
+}
+.left #header .limiter {
+  width:480px;
+}
+.left #content,  .left #contentDetail{
+  left:0;
+  right:auto;
+  border-left:none;
+  border-right:1px solid #ccc;
+}
+.left .wax-attribution {
+  left:320px;
+}
+.left a.zoomin {
+  left:39px;
+}
+.left a.zoomout {
+  left:10px;
+}
 #content, #contentDetail {
   position:absolute;
   top:0px;
@@ -211,6 +248,15 @@ body > div {
 #contentDetail.inactivo{
   display: none;
 }
+#contentDetail h2{
+  padding-bottom: 5px;
+}
+#contentDetail .imagen img{
+  width: 100%;
+  margin-top: 3px;
+  margin-bottom: 20px;
+  border: 1px solid #4B7CAB;
+}
 .section {
   width: 249px;
   background: #B6CEE5;
@@ -219,20 +265,8 @@ body > div {
   padding: 15px;
 }
 
-.layers a {
-  display:block;
-  padding:5px;
-  margin:5px 0;
-  background:#eee;
-  max-width:300px;
-}
-.layers a:hover, .layers a:focus, .layers a.active {
-  background:#369;
-  color:white;
-}
-p { margin-bottom:20px;}
-
-label { font-weight:700;}
+/* Formulario de entrada DESACTIVADO
+*/
 
 form.geocode input[type=text] {
   color: #0d5ca8;
@@ -285,197 +319,6 @@ form.geocode.loading input[type=submit] {
   color:#a21a1a;
   font-size:11px;
 }
-a.zoomer {
-  position: absolute;
-  top: 10px;
-}
-
-.wax-tooltip {
-  left:auto;
-  right:330px;
-  top:60px;
-}
-
-.wax-intip {
-  border: 1px solid #CCC !important;
-  color: #444 !important;
-  padding: 15px !important;
-  margin-bottom: 5px;
-  }
-  .wax-intip::before { 
-    border-width: 17px !important;
-    margin-left: -17px !important;
-    }
-
-.wax-intip h1 {
-  font-size: 100% !important;
-	font-weight: bold !important;
-	margin-bottom: 10px !important;
-  }
-
-.wax-legends {
-  left:auto;
-  right:330px;
-  width:290px;
-}
-
-.wax-share h3 {
-  margin:0px 0px 10px;
-  font-size:16px;
-  font-weight:normal;
-}
-.wax-share strong {
-  font-weight:700;
-}
-.wax-share small {
-  font-size:11px;
-  color:#999;
-  display:block;
-  margin-top:0.5em;
-}
-.share {
-  top:45px;
-  z-index:1000;
-}
-/*
-.mmg-default {
-  width:20px;
-  height:40px;
-  background:url(../img/map.png) -120px -30px;
-  left:-10px;
-  top:-30px;
-}*/
-
-/* Modes */
-
-/* Left */
-.left #header .limiter {
-  width:480px;
-}
-.left #content,  .left #contentDetail{
-  left:0;
-  right:auto;
-  border-left:none;
-  border-right:1px solid #ccc;
-}
-.left .wax-attribution {
-  left:320px;
-}
-.left a.zoomin {
-  left:39px;
-}
-.left a.zoomout {
-  left:10px;
-}
-.left .share {
-  left:330px;
-  z-index:2;
-}
-.left .wax-tooltip {
-  right:10px;
-}
-.left .wax-legends {
-  right:10px;
-}
-
-/* Hero */
-
-.hero .map {
-  top:50px;
-  bottom:auto;
-  height:400px;
-}
-.hero #content {
-  top:450px;
-  left:0;
-  right:0;
-  bottom:auto;
-  border-left:none;
-  border-right:none;
-  border-top:1px solid #ccc;
-  width:auto;
-}
-.hero #content .limiter {
-  width:920px;
-  margin:0px auto;
-  position:relative;
-}
-.hero a.zoomer {
-  top:10px;
-}
-.hero .wax-tooltip {
-  top:10px;
-  right:10px;
-}
-.hero .wax-legends {
-  right:10px;
-}
-.hero .share {
-  top:45px;
-}
-
-.hero .layers {
-  height:36px;
-}
-.hero .layer {
-  width:200px;
-  float:left;
-  margin-right:20px;
-  text-align:center;
-}
-
-/* embed */
-
-.embed .map {
-  position:absolute;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-  background:white;
-  z-index:1000;
-}
-.embed #header, .embed #content {
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:10001;
-  visibility:hidden;
-  overflow:hidden;
-}
-.embed a.zoomer {
-  top:10px;
-}
-.embed .wax-tooltip {
-  top:10px;
-  right:10px;
-}
-.embed .wax-legends {
-  right:10px;
-}
-.embed .share {
-  top:45px;
-}
-.embed .layers {
-  position:absolute;
-  top:90px;
-  left:0;
-  z-index:1001;
-  visibility:visible;
-}
-.embed .layer {
-  width:100px;
-  text-align:center;
-  border:1px solid #ccc;
-}
-
-#layout {
-  z-index:10;
-  position:absolute;
-  top:10px;
-  right:10px;
-}
-#layout a { margin-left:10px; }
 
 /* Animation */
 
@@ -500,54 +343,6 @@ a.zoomer {
 @-o-keyframes fade-in { from { opacity:0; } to { opacity:1; } }
 
 
-/* Filter button styles */
-
-.markerfilter {
-  margin: 5px;
-  width: 52px;
-  height: 52px;
-  line-height: 55px;
-  opacity: .3;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-
-  background:#000 no-repeat 50% 7px;
-  overflow: hidden;
-  display: block;
-  float: left;
-
-  text-transform:uppercase;
-  text-align: center;
-  font-weight: bold;
-  font-size: 12px;
-  color: white;
-  cursor: pointer;
-}
-
-.markerfilter:hover {
-  opacity: .6;
-}
-
-.selected {
-  opacity: 1;
-}
-.selected:hover {
-  opacity: 1;
-  }
-
-strong { font-weight:bold; }
-
-/* Clearfix */
-
-.clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-.clearfix { display: inline-block; }
 
 /* touch tweaks */
 
