@@ -25,10 +25,10 @@ Si queréis contribuir a añadir edificios públicos abandonados al mapa envían
 
 Si queréis contribuir en el desarrollo software del proyecto os recomendamos:
 
-- Consultar la lista de "issues" o "features" (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
-- Si has encontrado un problema puedes documentarlo en la lista de "issues" del proyecto en GitHub
-- Si has identificado alguna mejora puedes documentarla en la lista de "features" del proyecto en GitHub 
-- También puedes consultar la lista de "issues" actual y realizar aportaciones a través de comentarios.
+- Consultar la lista de ["issues"][21] o ["features"][22] (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
+- Si has encontrado un problema puedes documentarlo en la lista de ["issues"][21] del proyecto en GitHub
+- Si has identificado alguna mejora puedes documentarla en la lista de ["features"][22] del proyecto en GitHub 
+- También puedes consultar la lista de ["issues"][17] actual y realizar aportaciones a través de comentarios.
 
 
 Para garantizar una buena coordinación entre todos los contribuidores de "#DisponibleEnCordoba", nos gustaría animaros a seguir una serie de recomendaciones:
@@ -122,3 +122,5 @@ Puedes escribirnos un email a info@colaborativa.eu.
 [18]: https://github.com/colaborativa/DisponibleEnCordoba
 [19]: http://htmlpreview.github.com/?https://raw.github.com/colaborativa/DisponibleEnCordoba/gh-pages/docs/dec-principal.html
 [20]: http://htmlpreview.github.com/?https://raw.github.com/colaborativa/DisponibleEnCordoba/gh-pages/docs/dec-google_docs.html
+[21]: https://github.com/colaborativa/DisponibleEnCordoba/issues?labels=bug&state=open
+[22]: https://github.com/colaborativa/DisponibleEnCordoba/issues?labels=enhancement&state=open
