@@ -46,11 +46,11 @@ Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el m�
 
 ## Instalación
 
-### Clonar el repositorio en local
+### Clonar el repositorio para obtener una copia en local
 
 $ git clone git://github.com/colaborativa/DisponibleEnCordoba.git
 
-### Hacer un Fork del repositorio 
+### Si deseas contribuir al proyecto entonces haz un Fork del repositorio 
 
 Primero hacer click en el botón "Fork" del proyecto #DisponibleEnCordoba en GitHub. [18]
 
@@ -69,8 +69,8 @@ Para más información sobre qué es un Fork visitar [17].
     * "dec-google_docs.js v1.0": función que actúa como interfaz con Google spreadsheet
     * "dec-principal.js v1.0": función principal que añade los marcadores en el mapa de acuerdo con la información contenida en Google spreadsheet.
 * /docs/: directorio con el código documentado en formato HTML. 
-    * "dec-google_docs.html": documentación del código en "dec-google_docs.js"
-    * "dec-principal.html": documentación del código en "dec-principal.js".
+    * "dec-google_docs.html" [20]: documentación del código en "dec-google_docs.js"
+    * "dec-principal.html" [19]: documentación del código en "dec-principal.js".
 
 ### Dependencias con otras librerías
 
@@ -82,6 +82,7 @@ Para más información sobre qué es un Fork visitar [17].
 
 ## Documentación oficial
 Más información sobre el proyecto en [1] y [2].
+La documentación del código está disponible en [19] y [20].
 
 ## Autores y créditos
 
@@ -114,3 +115,5 @@ Puedes escribirnos un email a info@colaborativa.eu.
 [16]: https://github.com/colaborativa/DisponibleEnCordoba/issues
 [17]: https://help.github.com/articles/fork-a-repo
 [18]: https://github.com/colaborativa/DisponibleEnCordoba
+[19]: http://htmlpreview.github.com/?https://raw.github.com/colaborativa/DisponibleEnCordoba/gh-pages/docs/dec-principal.html
+[20]: http://htmlpreview.github.com/?https://raw.github.com/colaborativa/DisponibleEnCordoba/gh-pages/docs/dec-google_docs.html
