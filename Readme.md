@@ -3,11 +3,11 @@
 [![Build Status](https://travis-ci.org/colaborativa/DisponibleEnCordoba.png)](https://travis-ci.org/colaborativa/DisponibleEnCordoba)
 
 
-“#DisponibleEnCordoba” quiere visualizar el patrimonio público sin uso de Córdoba [1]. En Córdoba existen decenas de edificios públicos abandonados en buen estado de conservación. Mientras tanto, numerosas asociaciones, colectivos y organizaciones carecen de espacio [2].
+“#DisponibleEnCordoba” quiere visualizar el patrimonio público sin uso de [Córdoba] [1]. En Córdoba existen decenas de edificios públicos abandonados en buen estado de conservación. Mientras tanto, numerosas asociaciones, colectivos y organizaciones carecen de espacio [2].
 
 ## Descripción
 
-"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en GitHub [18], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 ES [3].
+"#DisponibleEnCordoba" es una aplicación Web abierta, disponible en [GitHub] [18], de geolocalización y visualización de edificios públicos abandonados en Córdoba basada en OpenStreetMaps [6], el servidor de mapas MapBox [7] y GoogleSpreadSheet [8]. Este proyecto de código libre está distribuido bajo licencia MIT [15]. Los textos e imágenes bajo una licencia creative commons CC BY 3.0 ES [3].
 
 Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona pueda acceder a ellos y generar trabajos derivados.
 
@@ -40,9 +40,9 @@ Para garantizar una buena coordinación entre todos los contribuidores de "#Disp
 - Antes de enviar un "pull request" de una mejora, asegurarse que funciona correctamente y que ha superado una serie de tests
 - No olvidar referenciar "issues" en Git Commits cuando se resuelvan.
 
-Por nuestro lado nos comprometemos a mantener la lista de "issues" y "features" [16] actualizada en todo momento.
+Por nuestro lado nos comprometemos a mantener la lista de ["issues" y "features"] [16] actualizada en todo momento.
 
-Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el método de trabajo del equipo de GitHub [4] y en especial la sección de "Contributors".
+Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el método de trabajo del equipo de [GitHub] [4] y en especial la sección de "Contributors".
 
 ## Instalación
 
@@ -52,13 +52,13 @@ Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el m�
 
 ### Si deseas contribuir al proyecto entonces haz un Fork del repositorio 
 
-Primero hacer click en el botón "Fork" del proyecto #DisponibleEnCordoba en GitHub. [18]
+Primero hacer click en el botón "Fork" del proyecto #DisponibleEnCordoba en [GitHub] [18].
 
 A continuación clonar el "Fork" en tu ordenador:
 
     $ git clone https://github.com/username/DisponibleEnCordoba.git
 
-Para más información sobre qué es un Fork visitar [17].
+Para más información sobre qué es un [Fork visitar] [17].
 
 ### Sobre los archivos del proyecto
 
@@ -69,15 +69,15 @@ Para más información sobre qué es un Fork visitar [17].
     * "dec-google_docs.js v1.0": función que actúa como interfaz con Google spreadsheet
     * "dec-principal.js v1.0": función principal que añade los marcadores en el mapa de acuerdo con la información contenida en Google spreadsheet.
 * /docs/: directorio con el código documentado en formato HTML. 
-    * "dec-google_docs.html" [20]: documentación del código en "dec-google_docs.js"
-    * "dec-principal.html" [19]: documentación del código en "dec-principal.js".
+    * [dec-google_docs.html] [20]: documentación del código en "dec-google_docs.js"
+    * [dec-principal.html] [19]: documentación del código en "dec-principal.js".
 
 ### Dependencias con otras librerías
 
-* Mapbox [9]
-* jQuery [10]
-* Underscore [11]
-* jQuery emailSpamProtection [12]
+* [Mapbox] [9]
+* [jQuery] [10]
+* [Underscore] [11]
+* [jQuery emailSpamProtection] [12]
 
 
 ## Documentación oficial
@@ -97,9 +97,9 @@ Muchas gracias a todos los contribuidores [16].
 
 Puedes escribirnos un email a info@colaborativa.eu.
 
-[1]: http://disponibleencordoba.colaborativa.eu "#DisponibleEnCordoba"
-[2]: http://colaborativa.eu/proyectos/disponible-en-cordoba/ "#DisponibleEnCordoba en Colaborativa"
-[3]: http://creativecommons.org/licenses/by/3.0/es/ "CC by 3.0"
+[1]: http://disponibleencordoba.colaborativa.eu 
+[2]: http://colaborativa.eu/proyectos/disponible-en-cordoba/ 
+[3]: http://creativecommons.org/licenses/by/3.0/es/ 
 [4]: http://rdegges.com/successful-github-development
 [5]: http://colaborativa.eu
 [6]: http://www.openstreetmap.es/
