@@ -16,29 +16,29 @@ Se basa en datos abiertos en formato JSON y CSV, de manera que cualquier persona
 ### Añadiendo edificios a la lista
 Si queréis contribuir a añadir edificios públicos abandonados al mapa envíanos un email a info@colaborativa.eu incluyendo: 
 
-    - Localización del edificio abandonado
-    - Estado actual
-    - Fotografías
-    - Links a prensa o información oficial.
+- Localización del edificio abandonado
+- Estado actual
+- Fotografías
+- Links a prensa o información oficial.
  
 ### Desarrollando software
 
 Si queréis contribuir en el desarrollo software del proyecto os recomendamos:
 
-    - Consultar la lista de "issues" o "features" (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
-    - Si has encontrado un problema puedes documentarlo en la lista de "issues" del proyecto en GitHub
-    - Si has identificado alguna mejora puedes documentarla en la lista de "features" del proyecto en GitHub 
-    - También puedes consultar la lista de "issues" actual y realizar aportaciones a través de comentarios.
+- Consultar la lista de "issues" o "features" (problemas o mejoras) del proyecto en GitHub, elegir alguno, asignároslo y poneros manos a la obra. ¡Así de fácil!
+- Si has encontrado un problema puedes documentarlo en la lista de "issues" del proyecto en GitHub
+- Si has identificado alguna mejora puedes documentarla en la lista de "features" del proyecto en GitHub 
+- También puedes consultar la lista de "issues" actual y realizar aportaciones a través de comentarios.
 
 
 Para garantizar una buena coordinación entre todos los contribuidores de "#DisponibleEnCordoba", nos gustaría animaros a seguir una serie de recomendaciones:
 
-    - Consultar la lista de mejoras existentes y solicitar nuevas
-    - Documentar "bugs" o comportamientos extraños
-    - Listar las tareas pendientes de desarrollo 
-    - Utilizar el mismo estilo de código que en el resto del proyecto
-    - Antes de enviar un "pull request" de una mejora, asegurarse que funciona correctamente y que ha superado una serie de tests
-    - No olvidar referenciar "issues" en Git Commits cuando se resuelvan.
+- Consultar la lista de mejoras existentes y solicitar nuevas
+- Documentar "bugs" o comportamientos extraños
+- Listar las tareas pendientes de desarrollo 
+- Utilizar el mismo estilo de código que en el resto del proyecto
+- Antes de enviar un "pull request" de una mejora, asegurarse que funciona correctamente y que ha superado una serie de tests
+- No olvidar referenciar "issues" en Git Commits cuando se resuelvan.
 
 Por nuestro lado nos comprometemos a mantener la lista de "issues" y "features" [16] actualizada en todo momento.
 
@@ -48,7 +48,7 @@ Si no habéis colaborado nunca en un proyecto abierto os recomendamos leer el m�
 
 ### Clonar el repositorio para obtener una copia en local
 
-$ git clone git://github.com/colaborativa/DisponibleEnCordoba.git
+    $ git clone git://github.com/colaborativa/DisponibleEnCordoba.git
 
 ### Si deseas contribuir al proyecto entonces haz un Fork del repositorio 
 
@@ -56,7 +56,7 @@ Primero hacer click en el botón "Fork" del proyecto #DisponibleEnCordoba en Git
 
 A continuación clonar el "Fork" en tu ordenador:
 
-$ git clone https://github.com/username/DisponibleEnCordoba.git
+    $ git clone https://github.com/username/DisponibleEnCordoba.git
 
 Para más información sobre qué es un Fork visitar [17].
 
