@@ -12,14 +12,6 @@ var map;
 var data_id = '0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc';
 var map_id = 'colaborativa.OSMCordoba';
 
-// Función Principal
-// ------------------------------
-// Obtención de los datos de la spreadsheet en **Google Drive**. 
-// La función `mg_google_docs_spreadsheet_1` está definida en `dec-google_docs.js`.
-// Al terminar y ya que se ha definido callback, se invocará la función mapData definida más abajo.
-mmg_google_docs_spreadsheet_1(data_id, mapData);
-
-
 // Creación e inicialización del objeto mapa
 $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
     if( DEBUG_MAP) {console.log("creating map");}
@@ -29,6 +21,14 @@ $('#map').mapbox('colaborativa.OSMCordoba', function(mapTemp, tilejson) {
     map.setPanLimits([{ lat: 37.9452, lon: -4.8641 }, { lat: 37.8133, lon: -4.6835 }]);
     map.zoom(14, true);
 });
+$( document ).ready(function() {
+// Función Principal
+// ------------------------------
+// Obtención de los datos de la spreadsheet en **Google Drive**. 
+// La función `mg_google_docs_spreadsheet_1` está definida en `dec-google_docs.js`.
+// Al terminar y ya que se ha definido callback, se invocará la función mapData definida más abajo.
+mmg_google_docs_spreadsheet_1(data_id, mapData);
+
 
 // Funciones Auxiliares
 // --------------------
@@ -108,3 +108,4 @@ function download_data() {
     // La llamada URL para formato `JSON` es:
     $('#download_json').attr('href', 'https://spreadsheets.google.com/feeds/list/' + data_id + '/od6/public/values?alt=json-in-script');
 }
+});
