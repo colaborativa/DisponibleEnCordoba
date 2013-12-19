@@ -25,11 +25,11 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
     // y almacenar todos los datos en la variable array `features`.
     function response(x) {
         if( DEBUG_GOOGLE) { console.log("function response");}
-        var GeoJSON_Array = [],
+        var features = [],
             latfield = '',
             lonfield = '';
         // Chequear que los datos son válidos antes de continuar.
-        if (!x || !x.feed) return GeoJSON_Array;
+        if (!x || !x.feed) return features;
         for (var f in x.feed.entry[0]) {
             if (f.match(/\$Lat/i)){
                 latfield = f;                    
@@ -39,13 +39,15 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
             }
         }
         // Bucle for para cada fila de la spreadsheet, que corresponde con un edificio abandonado.
-        // GeoJson Format needed 19-12-2013
         for (var i = 0; i < x.feed.entry.length; i++) {                             
             var entry = x.feed.entry[i];
-            var feature = {"type": "Feature",
-                "geometry": {"type": "Point",coordinates: []},
+            var feature = {
+                geometry: {
+                    type: 'Point',
+                    coordinates: []
+                },
                 // Obtener cada columna de la fila actual en formato texto.
-                "properties": {
+                properties: {
                     'marker-color':'#0d5ca8',
                     'titulo': entry['gsx$titulo'].$t,
                     'direccion': entry['gsx$direccion'].$t,
@@ -54,9 +56,9 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                     'enlace': entry['gsx$enlace'].$t,  
                     'categoria': entry['gsx$categoria'].$t, 
                     'masinfo': entry['gsx$masinfo'].$t,
-                    'referencia': entry['gsx$referencia'].$t 
+                    'referencia': entry['gsx$referencia'].$t, 
                 }
-                };
+            };
             // Para la latitud y longitud es necesario convertir a float. 
             for (var y in entry) {
                 if (y === latfield){
@@ -71,11 +73,11 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
             }
             
             if (feature.geometry.coordinates.length == 2){
-                 GeoJSON_Array.push(feature);
+                 features.push(feature);
             }
         }
         // Llamar a la función callback con el array `features` como dato de entrada.
-        return callback(GeoJSON_Array);
+        return callback(features);
     }
     // Definimos la URL con el ID de nuestra spreadsheet en Google Drive.
     var url = 'http://spreadsheets.google.com/feeds/list/' +
