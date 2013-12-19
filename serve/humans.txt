@@ -1,0 +1,20 @@
+/* TEAM */
+    Web, User Interface & Graphic designer, Web Editor: Javier Buron Garcia
+    Site: javierburon[at]colaborativa.eu
+    Twitter: @javiburon
+    From:Cordoba, Andalucia, Europe
+
+    Web Engineer, Web Editor: Magda Sanchez Mora
+    Site: magdasanchez[at]colaborativa.eu
+    Twitter: @msanchezmora
+    From:Cordoba, Andalucia, Europe
+
+/* THANKS */
+
+
+
+/* SITE */
+    Last update:2013/02/17
+    Language:Spanish
+    Doctype:HTML5
+    IDE: HTML, Underscore, Mapbox
