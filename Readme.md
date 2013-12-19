@@ -84,6 +84,21 @@ Consultar más información sobre [qué es un Fork] [17].
 - [Underscore] [11]
 - [jQuery emailSpamProtection] [12]
 
+## ¿Cómo actualizar tu FORK de #DisponibleEnCordoba con las últimas mejoras?
+
+Ir a la branch master en local de tu Repositorio (clone de DisponibleEnCordoba) y desde el Terminal corre los siguiente comandos:
+
+    $ git remote add upstream https://github.com/colaborativa/DisponibleEnCordoba.git
+    
+Este comando añade otro repositorio remoto que apunta al Original, para ver los existentes ejecuta "git remote -v".
+
+    $ git fetch upstream
+
+A continuación, hemos cargado todos los commits, incluyendo branches y tags.
+
+    $ git pull upstream gh-pages
+
+Por último, hacemos un merge de branch gh-pages del repositorio original a la que nos encontremos actualmente del repositorio clonado local. Si hubiera conflictos aparecerían en este momento.
 
 ## Documentación oficial
 Más información sobre el proyecto en [la web propia] [1] y en [colaborativa.eu][2].
