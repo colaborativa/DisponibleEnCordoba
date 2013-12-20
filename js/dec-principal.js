@@ -35,33 +35,38 @@ function mapData(f) {
     features = f;
      // Ahora se añaden los markers al mapa en formato GeoJSON.  
     map.markerLayer.setGeoJSON(features);
+    
     var mustacheTemplate = '<a class="closeWindow" href="#">&#10006;</a>' +
     '<script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'+
     '<h1 class="map-title"><span class="element-invisible">#DisponibleEnCordoba</span></h1>'+
     '<h2>{{titulo}}</h2>'+
     '<h3>{{direccion}}</h3>'+
-    '<div class="imagen"><img src="{{enlace}}" alt="{{titulo}}">'+
-    '</div>'+
-    '<p>{{descripcion}}</p>'+
-    '<p>'+
-    '<em>Referencia catastral:</em><br> '+
-    '<a href="https://www1.sedecatastro.gob.es/OVCFrames.aspx?TIPO=consulta">{{referencia}}</a>'+
-    '</p>'+
-    '<a href="{{masinfo}}">Enlace externo</a>'+
+    '<script> if ("{{enlace}}" != ""){'+
+    '$("#contentDetail h3").append("'+"<div class='imagen'><img src='{{enlace}}' alt='{{titulo}}''> </div>"+'");'+
+    '}</script>'+
+    '<p id="descripcion" >{{descripcion}}</p>'+
+    '<script> if ("{{referencia}}" != ""){'+
+    '$("#contentDetail #descripcion").append("' + "<p> <em>Referencia catastral:</em><br><a href='https://www1.sedecatastro.gob.es/OVCFrames.aspx?TIPO=consulta'>{{referencia}}</a> </p>"+'");'+
+    '}</script>'+
+     '<script> if ("{{masinfo}}" != "") {'+
+    '$("#contentDetail #descripcion").append("'+"<p><a href='{{masinfo}}'>Enlace externo</a></p>"+'");'+
+    '}</script>'+
     '<p class="footer">'+
     '<a href="http://colaborativa.eu"> Colaborativa.eu</a> 2013. Datos abiertos con licencia '+
     '<a href="http://opendatacommons.org/licenses/odbl/">ODC-ODbL</a>. Textos e imágenes de la web con licencia <a href="http://creativecommons.org/licenses/by/2.0/es/">CC-BY-SA 2.0.</a>'+
     '</p>';
     map.markerLayer.on('click', function(e) {
-        e.layer.unbindPopup();
-        $('#contentDetail').removeClass('inactivo').addClass('activo'); 
-        $('#contentDetail').html('');
-        var html = Mustache.to_html(mustacheTemplate, e.layer.feature.properties);
-        $('#contentDetail').html(html);
-    });
+            e.layer.unbindPopup();
+            $('#contentDetail').removeClass('inactivo').addClass('activo'); 
+            $('#contentDetail').html('');
+            var html = Mustache.to_html(mustacheTemplate, e.layer.feature.properties);
+            $('#contentDetail').html(html);
+        });
     // Llamada a la función `download_data` definida más abajo.
     download_data();
 }
+
+        
 // La función `download_data` introducirá los enlaces a los datos abiertos en formato CSV y JSON en el HTML.
 // Utiliza la variable `data_id definida al comienzo para obtener los datos de **Google Drive SpreadSheet**.
 function download_data() {
