@@ -34,7 +34,9 @@ function mapData(f) {
     // título, descripción, etc.
     features = f;
      // Ahora se añaden los markers al mapa en formato GeoJSON.  
-    map.markerLayer.setGeoJSON(features);
+    var markerLayer = L.mapbox.markerLayer(features)
+    .addTo(map);
+    
     
     var mustacheTemplate = '<a class="closeWindow" href="#">&#10006;</a>' +
     '<script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'+
@@ -55,7 +57,7 @@ function mapData(f) {
     '<a href="http://colaborativa.eu"> Colaborativa.eu</a> 2013. Datos abiertos con licencia '+
     '<a href="http://opendatacommons.org/licenses/odbl/">ODC-ODbL</a>. Textos e imágenes de la web con licencia <a href="http://creativecommons.org/licenses/by/2.0/es/">CC-BY-SA 2.0.</a>'+
     '</p>';
-    map.markerLayer.on('click', function(e) {
+    markerLayer.on('click', function(e) {
             e.layer.unbindPopup();
             $('#contentDetail').removeClass('inactivo').addClass('activo'); 
             $('#contentDetail').html('');
